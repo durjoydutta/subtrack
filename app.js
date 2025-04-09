@@ -3,6 +3,7 @@ import {PORT} from './config/env.js';
 import usersRouter from './routes/users.route.js';
 import authsRouter from './routes/auth.route.js';
 import subscriptionsRouter from './routes/subscriptions.route.js';
+import connectDB from './database/mongodb.js';
 
 const app = express();
 
@@ -14,8 +15,9 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.listen(PORT, () => {
-    console.log(`Example app listening at http://localhost:${PORT}`)
+app.listen(PORT, async () => {
+    console.log(`SubTrack API is listening on http://localhost:${PORT}`);
+    await connectDB();
 })
 
 export default app;
