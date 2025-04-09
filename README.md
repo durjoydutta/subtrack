@@ -1,1 +1,2 @@
-A basic subscription tracker workflow api
+# SubTrack
+An api specifically built for managing and tracking your subscription service
