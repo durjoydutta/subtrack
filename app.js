@@ -5,11 +5,15 @@ import usersRouter from './routes/users.route.js';
 import authsRouter from './routes/auth.route.js';
 import subscriptionsRouter from './routes/subscriptions.route.js';
 import connectDB from './database/mongodb.js';
+import errorMiddleware from "./middlewares/error.middleware.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(errorMiddleware);
+app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/api/v1/auth', authsRouter);
