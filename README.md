@@ -1,2 +1,2 @@
 # SubTrack
-An api specifically built for managing and tracking your subscription service
+An api built specifically for managing and tracking your subscription service
